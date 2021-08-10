@@ -104,12 +104,12 @@ public class ProdutoNoPedidoQueryService extends QueryService<ProdutoNoPedido> {
                         )
                     );
             }
-            if (criteria.getProdutoId() != null) {
+            if (criteria.getPedidoId() != null) {
                 specification =
                     specification.and(
                         buildSpecification(
-                            criteria.getProdutoId(),
-                            root -> root.join(ProdutoNoPedido_.produto, JoinType.LEFT).get(Pedido_.id)
+                            criteria.getPedidoId(),
+                            root -> root.join(ProdutoNoPedido_.pedido, JoinType.LEFT).get(Pedido_.id)
                         )
                     );
             }

@@ -31,7 +31,7 @@ export class ProdutoNoPedidoUpdateComponent implements OnInit {
     preco: [],
     criado: [],
     produto: [],
-    produto: [],
+    pedido: [],
   });
 
   constructor(
@@ -103,14 +103,14 @@ export class ProdutoNoPedidoUpdateComponent implements OnInit {
       preco: produtoNoPedido.preco,
       criado: produtoNoPedido.criado ? produtoNoPedido.criado.format(DATE_TIME_FORMAT) : null,
       produto: produtoNoPedido.produto,
-      produto: produtoNoPedido.produto,
+      pedido: produtoNoPedido.pedido,
     });
 
     this.produtosSharedCollection = this.produtoService.addProdutoToCollectionIfMissing(
       this.produtosSharedCollection,
       produtoNoPedido.produto
     );
-    this.pedidosSharedCollection = this.pedidoService.addPedidoToCollectionIfMissing(this.pedidosSharedCollection, produtoNoPedido.produto);
+    this.pedidosSharedCollection = this.pedidoService.addPedidoToCollectionIfMissing(this.pedidosSharedCollection, produtoNoPedido.pedido);
   }
 
   protected loadRelationshipsOptions(): void {
@@ -125,7 +125,7 @@ export class ProdutoNoPedidoUpdateComponent implements OnInit {
     this.pedidoService
       .query()
       .pipe(map((res: HttpResponse<IPedido[]>) => res.body ?? []))
-      .pipe(map((pedidos: IPedido[]) => this.pedidoService.addPedidoToCollectionIfMissing(pedidos, this.editForm.get('produto')!.value)))
+      .pipe(map((pedidos: IPedido[]) => this.pedidoService.addPedidoToCollectionIfMissing(pedidos, this.editForm.get('pedido')!.value)))
       .subscribe((pedidos: IPedido[]) => (this.pedidosSharedCollection = pedidos));
   }
 
@@ -137,7 +137,7 @@ export class ProdutoNoPedidoUpdateComponent implements OnInit {
       preco: this.editForm.get(['preco'])!.value,
       criado: this.editForm.get(['criado'])!.value ? dayjs(this.editForm.get(['criado'])!.value, DATE_TIME_FORMAT) : undefined,
       produto: this.editForm.get(['produto'])!.value,
-      produto: this.editForm.get(['produto'])!.value,
+      pedido: this.editForm.get(['pedido'])!.value,
     };
   }
 }

@@ -45,8 +45,8 @@
           <th scope="col" jhiSortBy="produto.nome">
             <span jhiTranslate="ecommerceSimplesApp.produtoNoPedido.produto">Produto</span> <fa-icon icon="sort"></fa-icon>
           </th>
-          <th scope="col" jhiSortBy="produto.id">
-            <span jhiTranslate="ecommerceSimplesApp.produtoNoPedido.produto">Produto</span> <fa-icon icon="sort"></fa-icon>
+          <th scope="col" jhiSortBy="pedido.id">
+            <span jhiTranslate="ecommerceSimplesApp.produtoNoPedido.pedido">Pedido</span> <fa-icon icon="sort"></fa-icon>
           </th>
           <th scope="col"></th>
         </tr>
@@ -65,8 +65,8 @@
             </div>
           </td>
           <td>
-            <div *ngIf="produtoNoPedido.produto">
-              <a [routerLink]="['/pedido', produtoNoPedido.produto?.id, 'view']">{{ produtoNoPedido.produto?.id }}</a>
+            <div *ngIf="produtoNoPedido.pedido">
+              <a [routerLink]="['/pedido', produtoNoPedido.pedido?.id, 'view']">{{ produtoNoPedido.pedido?.id }}</a>
             </div>
           </td>
           <td class="text-right">

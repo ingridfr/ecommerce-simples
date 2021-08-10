@@ -65,11 +65,11 @@
         </div>
 
         <div class="form-group">
-          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.produtoNoPedido.produto" for="field_produto">Produto</label>
-          <select class="form-control" id="field_produto" data-cy="produto" name="produto" formControlName="produto">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.produtoNoPedido.pedido" for="field_pedido">Pedido</label>
+          <select class="form-control" id="field_pedido" data-cy="pedido" name="pedido" formControlName="pedido">
             <option [ngValue]="null"></option>
             <option
-              [ngValue]="pedidoOption.id === editForm.get('produto')!.value?.id ? editForm.get('produto')!.value : pedidoOption"
+              [ngValue]="pedidoOption.id === editForm.get('pedido')!.value?.id ? editForm.get('pedido')!.value : pedidoOption"
               *ngFor="let pedidoOption of pedidosSharedCollection; trackBy: trackPedidoById"
             >
               {{ pedidoOption.id }}
