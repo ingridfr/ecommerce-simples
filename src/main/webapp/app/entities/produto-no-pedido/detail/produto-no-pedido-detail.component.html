@@ -34,10 +34,10 @@
             <a [routerLink]="['/produto', produtoNoPedido.produto?.id, 'view']">{{ produtoNoPedido.produto?.nome }}</a>
           </div>
         </dd>
-        <dt><span jhiTranslate="ecommerceSimplesApp.produtoNoPedido.produto">Produto</span></dt>
+        <dt><span jhiTranslate="ecommerceSimplesApp.produtoNoPedido.pedido">Pedido</span></dt>
         <dd>
-          <div *ngIf="produtoNoPedido.produto">
-            <a [routerLink]="['/pedido', produtoNoPedido.produto?.id, 'view']">{{ produtoNoPedido.produto?.id }}</a>
+          <div *ngIf="produtoNoPedido.pedido">
+            <a [routerLink]="['/pedido', produtoNoPedido.pedido?.id, 'view']">{{ produtoNoPedido.pedido?.id }}</a>
           </div>
         </dd>
       </dl>

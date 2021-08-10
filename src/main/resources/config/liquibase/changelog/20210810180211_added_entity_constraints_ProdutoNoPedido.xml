@@ -14,9 +14,9 @@
                                  referencedColumnNames="id"
                                  referencedTableName="produto"/>
 
-        <addForeignKeyConstraint baseColumnNames="produto_id"
+        <addForeignKeyConstraint baseColumnNames="pedido_id"
                                  baseTableName="produto_no_pedido"
-                                 constraintName="fk_produto_no_pedido__produto_id"
+                                 constraintName="fk_produto_no_pedido__pedido_id"
                                  referencedColumnNames="id"
                                  referencedTableName="pedido"/>
     </changeSet>

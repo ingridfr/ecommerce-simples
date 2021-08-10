@@ -19,7 +19,7 @@ public class ProdutoNoPedidoDTO implements Serializable {
 
     private ProdutoDTO produto;
 
-    private PedidoDTO produto;
+    private PedidoDTO pedido;
 
     public Long getId() {
         return id;
@@ -61,12 +61,12 @@ public class ProdutoNoPedidoDTO implements Serializable {
         this.produto = produto;
     }
 
-    public PedidoDTO getProduto() {
-        return produto;
+    public PedidoDTO getPedido() {
+        return pedido;
     }
 
-    public void setProduto(PedidoDTO produto) {
-        this.produto = produto;
+    public void setPedido(PedidoDTO pedido) {
+        this.pedido = pedido;
     }
 
     @Override
@@ -99,7 +99,7 @@ public class ProdutoNoPedidoDTO implements Serializable {
             ", preco=" + getPreco() +
             ", criado='" + getCriado() + "'" +
             ", produto=" + getProduto() +
-            ", produto=" + getProduto() +
+            ", pedido=" + getPedido() +
             "}";
     }
 }

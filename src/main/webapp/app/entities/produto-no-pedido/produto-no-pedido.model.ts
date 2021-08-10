@@ -8,7 +8,7 @@ export interface IProdutoNoPedido {
   preco?: number | null;
   criado?: dayjs.Dayjs | null;
   produto?: IProduto | null;
-  produto?: IPedido | null;
+  pedido?: IPedido | null;
 }
 
 export class ProdutoNoPedido implements IProdutoNoPedido {
@@ -18,7 +18,7 @@ export class ProdutoNoPedido implements IProdutoNoPedido {
     public preco?: number | null,
     public criado?: dayjs.Dayjs | null,
     public produto?: IProduto | null,
-    public produto?: IPedido | null
+    public pedido?: IPedido | null
   ) {}
 }
 

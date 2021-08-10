@@ -65,12 +65,12 @@ describe('Component Tests', () => {
 
       it('Should call Pedido query and add missing value', () => {
         const produtoNoPedido: IProdutoNoPedido = { id: 456 };
-        const produto: IPedido = { id: 55593 };
-        produtoNoPedido.produto = produto;
+        const pedido: IPedido = { id: 55593 };
+        produtoNoPedido.pedido = pedido;
 
         const pedidoCollection: IPedido[] = [{ id: 48875 }];
         jest.spyOn(pedidoService, 'query').mockReturnValue(of(new HttpResponse({ body: pedidoCollection })));
-        const additionalPedidos = [produto];
+        const additionalPedidos = [pedido];
         const expectedCollection: IPedido[] = [...additionalPedidos, ...pedidoCollection];
         jest.spyOn(pedidoService, 'addPedidoToCollectionIfMissing').mockReturnValue(expectedCollection);
 
@@ -86,15 +86,15 @@ describe('Component Tests', () => {
         const produtoNoPedido: IProdutoNoPedido = { id: 456 };
         const produto: IProduto = { id: 87441 };
         produtoNoPedido.produto = produto;
-        const produto: IPedido = { id: 48227 };
-        produtoNoPedido.produto = produto;
+        const pedido: IPedido = { id: 48227 };
+        produtoNoPedido.pedido = pedido;
 
         activatedRoute.data = of({ produtoNoPedido });
         comp.ngOnInit();
 
         expect(comp.editForm.value).toEqual(expect.objectContaining(produtoNoPedido));
         expect(comp.produtosSharedCollection).toContain(produto);
-        expect(comp.pedidosSharedCollection).toContain(produto);
+        expect(comp.pedidosSharedCollection).toContain(pedido);
       });
     });
 

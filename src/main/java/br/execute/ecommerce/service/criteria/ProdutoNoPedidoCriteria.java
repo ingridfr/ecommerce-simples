@@ -35,7 +35,7 @@ public class ProdutoNoPedidoCriteria implements Serializable, Criteria {
 
     private LongFilter produtoId;
 
-    private LongFilter produtoId;
+    private LongFilter pedidoId;
 
     public ProdutoNoPedidoCriteria() {}
 
@@ -45,7 +45,7 @@ public class ProdutoNoPedidoCriteria implements Serializable, Criteria {
         this.preco = other.preco == null ? null : other.preco.copy();
         this.criado = other.criado == null ? null : other.criado.copy();
         this.produtoId = other.produtoId == null ? null : other.produtoId.copy();
-        this.produtoId = other.produtoId == null ? null : other.produtoId.copy();
+        this.pedidoId = other.pedidoId == null ? null : other.pedidoId.copy();
     }
 
     @Override
@@ -128,19 +128,19 @@ public class ProdutoNoPedidoCriteria implements Serializable, Criteria {
         this.produtoId = produtoId;
     }
 
-    public LongFilter getProdutoId() {
-        return produtoId;
+    public LongFilter getPedidoId() {
+        return pedidoId;
     }
 
-    public LongFilter produtoId() {
-        if (produtoId == null) {
-            produtoId = new LongFilter();
+    public LongFilter pedidoId() {
+        if (pedidoId == null) {
+            pedidoId = new LongFilter();
         }
-        return produtoId;
+        return pedidoId;
     }
 
-    public void setProdutoId(LongFilter produtoId) {
-        this.produtoId = produtoId;
+    public void setPedidoId(LongFilter pedidoId) {
+        this.pedidoId = pedidoId;
     }
 
     @Override
@@ -158,13 +158,13 @@ public class ProdutoNoPedidoCriteria implements Serializable, Criteria {
             Objects.equals(preco, that.preco) &&
             Objects.equals(criado, that.criado) &&
             Objects.equals(produtoId, that.produtoId) &&
-            Objects.equals(produtoId, that.produtoId)
+            Objects.equals(pedidoId, that.pedidoId)
         );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, quantidade, preco, criado, produtoId, produtoId);
+        return Objects.hash(id, quantidade, preco, criado, produtoId, pedidoId);
     }
 
     // prettier-ignore
@@ -176,7 +176,7 @@ public class ProdutoNoPedidoCriteria implements Serializable, Criteria {
             (preco != null ? "preco=" + preco + ", " : "") +
             (criado != null ? "criado=" + criado + ", " : "") +
             (produtoId != null ? "produtoId=" + produtoId + ", " : "") +
-            (produtoId != null ? "produtoId=" + produtoId + ", " : "") +
+            (pedidoId != null ? "pedidoId=" + pedidoId + ", " : "") +
             "}";
     }
 }

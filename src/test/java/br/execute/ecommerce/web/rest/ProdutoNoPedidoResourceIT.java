@@ -525,21 +525,21 @@ class ProdutoNoPedidoResourceIT {
 
     @Test
     @Transactional
-    void getAllProdutoNoPedidosByProdutoIsEqualToSomething() throws Exception {
+    void getAllProdutoNoPedidosByPedidoIsEqualToSomething() throws Exception {
         // Initialize the database
         produtoNoPedidoRepository.saveAndFlush(produtoNoPedido);
-        Pedido produto = PedidoResourceIT.createEntity(em);
-        em.persist(produto);
+        Pedido pedido = PedidoResourceIT.createEntity(em);
+        em.persist(pedido);
         em.flush();
-        produtoNoPedido.setProduto(produto);
+        produtoNoPedido.setPedido(pedido);
         produtoNoPedidoRepository.saveAndFlush(produtoNoPedido);
-        Long produtoId = produto.getId();
+        Long pedidoId = pedido.getId();
 
-        // Get all the produtoNoPedidoList where produto equals to produtoId
-        defaultProdutoNoPedidoShouldBeFound("produtoId.equals=" + produtoId);
+        // Get all the produtoNoPedidoList where pedido equals to pedidoId
+        defaultProdutoNoPedidoShouldBeFound("pedidoId.equals=" + pedidoId);
 
-        // Get all the produtoNoPedidoList where produto equals to (produtoId + 1)
-        defaultProdutoNoPedidoShouldNotBeFound("produtoId.equals=" + (produtoId + 1));
+        // Get all the produtoNoPedidoList where pedido equals to (pedidoId + 1)
+        defaultProdutoNoPedidoShouldNotBeFound("pedidoId.equals=" + (pedidoId + 1));
     }
 
     /**
