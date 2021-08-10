@@ -1,0 +1,30 @@
+{
+  "ecommerceSimplesApp": {
+    "pedido": {
+      "home": {
+        "title": "Pedidos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Pedido",
+        "createOrEditLabel": "Crear o editar Pedido",
+        "notFound": "Ningún Pedidos encontrado"
+      },
+      "created": "Un nuevo Pedido ha sido creado con el identificador {{ param }}",
+      "updated": "Un Pedido ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Pedido ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Pedido {{ id }}?"
+      },
+      "detail": {
+        "title": "Pedido"
+      },
+      "id": "ID",
+      "criado": "Criado",
+      "status": "Status",
+      "precoTotal": "Preco Total",
+      "comentario": "Comentario",
+      "codigoPagamento": "Codigo Pagamento",
+      "usuario": "Usuario",
+      "endereco": "Endereco"
+    }
+  }
+}
