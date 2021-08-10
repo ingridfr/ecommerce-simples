@@ -1,0 +1,11 @@
+id;criado;status;preco_total;comentario;codigo_pagamento
+1;2021-08-10T06:38:08;CANCELADO;79963;../fake-data/blob/hipster.txt;Madeira
+2;2021-08-09T23:19:35;ENTREGUE;41856;../fake-data/blob/hipster.txt;Sapatos Etiópia copying
+3;2021-08-09T21:55:30;CANCELADO;36323;../fake-data/blob/hipster.txt;XML Assurance National
+4;2021-08-10T14:25:52;ESTORNADO;75612;../fake-data/blob/hipster.txt;marca
+5;2021-08-10T13:20:51;AGUARDANDO_PAGAMENTO;34393;../fake-data/blob/hipster.txt;clicks-and-mortar deposit
+6;2021-08-10T00:27:12;ESTORNADO;80675;../fake-data/blob/hipster.txt;Toalhas
+7;2021-08-10T09:21:47;ENTREGUE;86627;../fake-data/blob/hipster.txt;payment holistic
+8;2021-08-10T09:35:31;ENTREGUE;85263;../fake-data/blob/hipster.txt;Música optimize
+9;2021-08-10T13:03:09;ESTORNADO;4837;../fake-data/blob/hipster.txt;Franc Avenida
+10;2021-08-10T07:04:04;AGUARDANDO_PAGAMENTO;57472;../fake-data/blob/hipster.txt;Toalhas Argentine Ceará

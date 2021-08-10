@@ -1,0 +1,54 @@
+{
+  "name": "Produto",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "fotoUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sku",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ean",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "criado",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "preco",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "precoPromocional",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "totalEstoque",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "produto",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210810180209"
+}

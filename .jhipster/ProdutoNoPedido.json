@@ -1,0 +1,42 @@
+{
+  "name": "ProdutoNoPedido",
+  "fields": [
+    {
+      "fieldName": "quantidade",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "preco",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "criado",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "produto",
+      "otherEntityRelationshipName": "produtoNoPedido",
+      "relationshipName": "produto",
+      "otherEntityField": "nome"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "produtoNoPedido",
+      "relationshipName": "produto"
+    }
+  ],
+  "entityTableName": "produto_no_pedido",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210810180211"
+}

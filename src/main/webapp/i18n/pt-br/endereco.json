@@ -1,0 +1,31 @@
+{
+  "ecommerceSimplesApp": {
+    "endereco": {
+      "home": {
+        "title": "Enderecos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Endereco",
+        "createOrEditLabel": "Criar ou editar Endereco",
+        "notFound": "Nenhum Endereco encontrado"
+      },
+      "created": "Um novo Endereco foi criado com o identificador {{ param }}",
+      "updated": "Um Endereco foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Endereco foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Endereco {{ id }}?"
+      },
+      "detail": {
+        "title": "Endereco"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "cep": "Cep",
+      "logradouro": "Logradouro",
+      "bairro": "Bairro",
+      "numero": "Numero",
+      "cidade": "Cidade",
+      "complemento": "Complemento",
+      "usuario": "Usuario"
+    }
+  }
+}

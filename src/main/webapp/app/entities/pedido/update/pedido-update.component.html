@@ -1,0 +1,125 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-pedido-heading" data-cy="PedidoCreateUpdateHeading" jhiTranslate="ecommerceSimplesApp.pedido.home.createOrEditLabel">
+        Create or edit a Pedido
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.criado" for="field_criado">Criado</label>
+          <div class="d-flex">
+            <input
+              id="field_criado"
+              data-cy="criado"
+              type="datetime-local"
+              class="form-control"
+              name="criado"
+              formControlName="criado"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.status" for="field_status">Status</label>
+          <select class="form-control" name="status" formControlName="status" id="field_status" data-cy="status">
+            <option [ngValue]="null">{{ 'ecommerceSimplesApp.StatusPedido.null' | translate }}</option>
+            <option value="PEDIDO">{{ 'ecommerceSimplesApp.StatusPedido.PEDIDO' | translate }}</option>
+            <option value="AGUARDANDO_PAGAMENTO">{{ 'ecommerceSimplesApp.StatusPedido.AGUARDANDO_PAGAMENTO' | translate }}</option>
+            <option value="PAGO">{{ 'ecommerceSimplesApp.StatusPedido.PAGO' | translate }}</option>
+            <option value="ENTREGUE">{{ 'ecommerceSimplesApp.StatusPedido.ENTREGUE' | translate }}</option>
+            <option value="CANCELADO">{{ 'ecommerceSimplesApp.StatusPedido.CANCELADO' | translate }}</option>
+            <option value="ESTORNADO">{{ 'ecommerceSimplesApp.StatusPedido.ESTORNADO' | translate }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.precoTotal" for="field_precoTotal">Preco Total</label>
+          <input
+            type="number"
+            class="form-control"
+            name="precoTotal"
+            id="field_precoTotal"
+            data-cy="precoTotal"
+            formControlName="precoTotal"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.comentario" for="field_comentario">Comentario</label>
+          <textarea
+            class="form-control"
+            name="comentario"
+            id="field_comentario"
+            data-cy="comentario"
+            formControlName="comentario"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.codigoPagamento" for="field_codigoPagamento"
+            >Codigo Pagamento</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codigoPagamento"
+            id="field_codigoPagamento"
+            data-cy="codigoPagamento"
+            formControlName="codigoPagamento"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.usuario" for="field_usuario">Usuario</label>
+          <select class="form-control" id="field_usuario" data-cy="usuario" name="usuario" formControlName="usuario">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="usuarioOption.id === editForm.get('usuario')!.value?.id ? editForm.get('usuario')!.value : usuarioOption"
+              *ngFor="let usuarioOption of usuariosSharedCollection; trackBy: trackUsuarioById"
+            >
+              {{ usuarioOption.nome }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="ecommerceSimplesApp.pedido.endereco" for="field_endereco">Endereco</label>
+          <select class="form-control" id="field_endereco" data-cy="endereco" name="endereco" formControlName="endereco">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="usuarioOption.id === editForm.get('endereco')!.value?.id ? editForm.get('endereco')!.value : usuarioOption"
+              *ngFor="let usuarioOption of usuariosSharedCollection; trackBy: trackUsuarioById"
+            >
+              {{ usuarioOption.nome }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

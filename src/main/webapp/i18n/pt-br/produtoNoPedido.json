@@ -1,0 +1,28 @@
+{
+  "ecommerceSimplesApp": {
+    "produtoNoPedido": {
+      "home": {
+        "title": "Produto No Pedidos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Produto No Pedido",
+        "createOrEditLabel": "Criar ou editar Produto No Pedido",
+        "notFound": "Nenhum Produto No Pedido encontrado"
+      },
+      "created": "Um novo Produto No Pedido foi criado com o identificador {{ param }}",
+      "updated": "Um Produto No Pedido foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Produto No Pedido foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Produto No Pedido {{ id }}?"
+      },
+      "detail": {
+        "title": "Produto No Pedido"
+      },
+      "id": "ID",
+      "quantidade": "Quantidade",
+      "preco": "Preco",
+      "criado": "Criado",
+      "produto": "Produto",
+      "produto": "Produto"
+    }
+  }
+}

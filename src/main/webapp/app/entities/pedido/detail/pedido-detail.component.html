@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="pedido">
+      <h2 data-cy="pedidoDetailsHeading"><span jhiTranslate="ecommerceSimplesApp.pedido.detail.title">Pedido</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ pedido.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.criado">Criado</span></dt>
+        <dd>
+          <span>{{ pedido.criado | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'ecommerceSimplesApp.StatusPedido.' + pedido.status }}">{{ pedido.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.precoTotal">Preco Total</span></dt>
+        <dd>
+          <span>{{ pedido.precoTotal }}</span>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.comentario">Comentario</span></dt>
+        <dd>
+          <span>{{ pedido.comentario }}</span>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.codigoPagamento">Codigo Pagamento</span></dt>
+        <dd>
+          <span>{{ pedido.codigoPagamento }}</span>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="pedido.usuario">
+            <a [routerLink]="['/usuario', pedido.usuario?.id, 'view']">{{ pedido.usuario?.nome }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="ecommerceSimplesApp.pedido.endereco">Endereco</span></dt>
+        <dd>
+          <div *ngIf="pedido.endereco">
+            <a [routerLink]="['/usuario', pedido.endereco?.id, 'view']">{{ pedido.endereco?.nome }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/pedido', pedido.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+
+entity Usuario {
+	nome String required 
+    cpf String
+    dataNascimento LocalDate
+    criado ZonedDateTime
+}
+
+entity Endereco {
+	nome String
+    cep String required
+    logradouro String
+    bairro String
+    numero String
+    cidade String
+    complemento String
+}
+
+entity Produto {
+	nome String required
+    descricao TextBlob
+    fotoUrl String
+	sku String
+	ean String
+    criado ZonedDateTime
+    preco Double
+    precoPromocional Double
+    totalEstoque Integer
+}
+
+enum StatusPedido{
+	PEDIDO, AGUARDANDO_PAGAMENTO, PAGO, ENTREGUE, CANCELADO, ESTORNADO
+}
+
+entity Pedido{
+	criado ZonedDateTime
+    status StatusPedido
+    precoTotal Double
+    comentario TextBlob
+    codigoPagamento String
+}
+
+entity ProdutoNoPedido {
+	quantidade Integer
+    preco Double
+    criado ZonedDateTime
+}
+
+relationship ManyToOne {
+	Endereco{usuario(nome)} to Usuario
+    Pedido{usuario(nome)} to Usuario
+    Pedido{endereco(nome)} to Usuario
+    ProdutoNoPedido{produto(nome)} to Produto
+    ProdutoNoPedido{produto} to Pedido
+}
+
+paginate * with pagination
+dto * with mapstruct
+filter * 
