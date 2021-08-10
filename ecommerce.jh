@@ -51,7 +51,7 @@ relationship ManyToOne {
     Pedido{usuario(nome)} to Usuario
     Pedido{endereco(nome)} to Usuario
     ProdutoNoPedido{produto(nome)} to Produto
-    ProdutoNoPedido{produto} to Pedido
+    ProdutoNoPedido{pedido} to Pedido
 }
 
 paginate * with pagination
